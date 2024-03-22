@@ -16,7 +16,7 @@ async fn receive_form(form: web::Json<FormData>) -> impl Responder {
     println!("CPF: {}", form.cpf);
     println!("Email: {}", form.email);
     println!("Senha: {}", form.senha);
-    println!("Confirmar Senha: {}", form.confirmarSenha);
+    println!("Confirmar Senha: {}", form.confirmar_senha);
     let output = pass_to_perl(&form).expect("Falha ao executar o script Perl");
 
     HttpResponse::Ok().body(String::from_utf8(output.stdout).unwrap())
